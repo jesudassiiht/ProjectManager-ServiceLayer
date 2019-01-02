@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19E59BDA-0F21-4AA7-86FB-F795478939B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrjManager.Business</RootNamespace>
+    <AssemblyName>PrjManager.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ParentTaskBusiness.cs" />
+    <Compile Include="ProjectBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceRequests\LogRequest.cs" />
+    <Compile Include="ServiceRequests\ParentTaskViewModel.cs" />
+    <Compile Include="ServiceRequests\ProjectViewModel.cs" />
+    <Compile Include="ServiceRequests\TaskViewModel.cs" />
+    <Compile Include="ServiceRequests\UserRequest.cs" />
+    <Compile Include="TaskBusiness.cs" />
+    <Compile Include="UserBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceResponses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrjManager.Entities\PrjManager.Entities.csproj">
+      <Project>{f0952c20-17c8-49e6-94f9-80fff7e517d0}</Project>
+      <Name>PrjManager.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrjManager.Infrastructure\PrjManager.Infrastructure.csproj">
+      <Project>{0248e63e-2899-444f-90d4-21e7bfc6d9cf}</Project>
+      <Name>PrjManager.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrjManager.Repositories\PrjManager.Repositories.csproj">
+      <Project>{896aac05-bd03-4f5c-9722-7e4c87975694}</Project>
+      <Name>PrjManager.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
